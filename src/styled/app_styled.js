@@ -3,25 +3,36 @@ import styled from 'styled-components';
 const MainContainerDiv = styled.div`
     // border: 3px solid blue;
     width: 90%
-    margin: 10 auto;
+    
+    margin: 10px auto;
     background: darkslategrey;
     
-    height: 100vh;
+    // height: 100vh;
+    height: 50px;
+    // height: 100%;
+    position: absolute;
+    top: 0px;
 
     display: flex;
     flex-direction: column;
 
+    z-index: 0;
 `
 const ContainerDiv = styled.div`
     border: 1px solid white;
-    margin: 5 auto;
+    margin: 5px auto;
     padding: 10px;
-
+    z-index: 5;
 
 `
 const TextP = styled.p`
-    textAlign: center;
+    border: 1px solid orange;
 
+    margin: 20px;
+    padding: 30px;
+    
+    textAlign: center;
+    z-index: 0;
 `
 
 const CustomButton = styled.button`

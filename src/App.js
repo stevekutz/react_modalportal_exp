@@ -25,8 +25,10 @@ function App() {
 
   return (
     <MainContainerDiv>
+
+        {modalOpen ? <CustomModal modalOpen = {modalOpen} /> : null}
         <ContainerDiv>
-        <CustomButton onClick = {toggleModal}> {modalButtonText} </CustomButton>
+            <CustomButton onClick = {toggleModal}> {modalButtonText} </CustomButton>
         </ContainerDiv>
         
         

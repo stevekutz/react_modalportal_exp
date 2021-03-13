@@ -7,16 +7,16 @@ import {
 
 } from '..//styled/modal_styles';
 
-const CustomModal = () => {
-    const [modalOpen, setModalOpen] = useState(false);
-    const [modalButtonText, setModalButtonText] = useState('Show');
+const CustomModal = (props) => {
+    // const [modalOpen, setModalOpen] = useState(false);
+    // const [modalButtonText, setModalButtonText] = useState('Show');
 
 
-    const toggleModal = () => {
-        setModalOpen(!modalOpen)
+    // const toggleModal = () => {
+    //     setModalOpen(!modalOpen)
     
-        {modalOpen ? setModalButtonText('Show') : setModalButtonText('Hide')}
-    }
+    //     {modalOpen ? setModalButtonText('Show') : setModalButtonText('Hide')}
+    // }
 
 
     return (
@@ -25,7 +25,7 @@ const CustomModal = () => {
 
         <MainContainerDiv>
 
-                {modalOpen && 
+                {props.modalOpen && 
                     <MainModalContainerDiv>
                         SOMETHING
                     

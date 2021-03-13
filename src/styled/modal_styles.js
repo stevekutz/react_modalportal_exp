@@ -26,16 +26,20 @@ const MainModalContainerDiv = styled.div`
     border: 1px solid deeppink;
 
     background: orange;
-    margin: 10px auto;
-    max-width: 30%;
+    margin: 0px auto;
+    width: 400px;
+    // max-width: 50%;
     // max-height: calc(100% - 100px);
     height: 200px;
 
-    display: flex;
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    // overflow: auto;
 
     // justifyContent: center;
 
-
+    z-index: 10;
 
 
 
