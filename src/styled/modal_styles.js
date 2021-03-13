@@ -1,14 +1,24 @@
 import styled from 'styled-components';
 
 const MainContainerDiv = styled.div`
-    border: 3px solid blue;
+    // border: 3px solid blue;
     width: 90%
     margin: 10 auto;
     background: darkslategrey;
-    max-height: calc(100% - 150px);
+    
+    height: 100vh;
 
     display: flex;
     flex-direction: column;
+
+`
+const ContainerDiv = styled.div`
+    height: 100vh;
+
+
+`
+const TextP = styled.p`
+    textAlign: center;
 
 `
 
@@ -18,8 +28,9 @@ const MainModalContainerDiv = styled.div`
     background: orange;
     margin: 10px auto;
     max-width: 30%;
-    max-height: calc(100% - 100px);
-    
+    // max-height: calc(100% - 100px);
+    height: 200px;
+
     display: flex;
 
     // justifyContent: center;
@@ -42,6 +53,7 @@ const ModalButton = styled.button`
 
 export {
     MainContainerDiv,
+    ContainerDiv,
     MainModalContainerDiv,
     ModalButton,
 

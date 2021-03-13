@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {
     MainContainerDiv,
+    ContainerDiv,
     MainModalContainerDiv,
     ModalButton,
 
@@ -23,15 +24,17 @@ const CustomModal = () => {
     
 
         <MainContainerDiv>
-            <ModalButton onClick = {toggleModal}> {modalButtonText} </ModalButton>
-            {modalOpen && 
-                <MainModalContainerDiv>
-                    SOMETHING
+
+                {modalOpen && 
+                    <MainModalContainerDiv>
+                        SOMETHING
+                    
+                    
+                    </MainModalContainerDiv>
                 
-                
-                </MainModalContainerDiv>
-              
-            }
+                }
+
+
             
         
         
