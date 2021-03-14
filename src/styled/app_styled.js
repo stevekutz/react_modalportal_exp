@@ -23,7 +23,10 @@ const ContainerDiv = styled.div`
     border: 1px solid white;
     margin: 5px auto;
     padding: 10px;
-    position: relative;
+    // position: relative;
+    // position: fixed;
+    // position: absolute;
+    top: 0;
     z-index: 5;
 
 `

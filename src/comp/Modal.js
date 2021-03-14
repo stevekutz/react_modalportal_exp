@@ -4,6 +4,8 @@ import {
     ContainerDiv,
     MainModalContainerDiv,
     ModalButton,
+    ModalContentContainer,
+    ModalTextContent,
 
 } from '..//styled/modal_styles';
 
@@ -27,7 +29,13 @@ const CustomModal = (props) => {
 
                 {props.modalOpen && 
                     <MainModalContainerDiv>
-                        SOMETHING
+                        <ModalContentContainer>
+                            <ModalTextContent> SOMETHING </ModalTextContent>
+                            <ModalTextContent> SOMETHING </ModalTextContent>
+                            <ModalTextContent> SOMETHING </ModalTextContent>
+                            <ModalButton onClick = {props.toggleModal}> CLOSE that modal</ModalButton>
+                        </ModalContentContainer>
+
                     
                     
                     </MainModalContainerDiv>
