@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const MainContainerDiv = styled.div`
     // border: 3px solid blue;
-    width: 90%
+    width: 100%
     margin: 10px auto;
     background: darkslategrey;
     
@@ -23,24 +23,29 @@ const TextP = styled.p`
 `
 
 const MainModalContainerDiv = styled.div`
-    border: 1px solid deeppink;
+    border: 5px solid deeppink;
 
     background: orange;
     margin: 0px auto;
-    width: 400px;
-    max-width: calc(100% - 400px);
+    // max-width: 600px;
+    // min-width: 50px;
+    width: 600px;
+    // max-width: calc(100% - 300px);
     // max-height: calc(100% - 100px);
+    
     height: 200px;
 
 
     //  with position NOT specified, Show /Hide moves top/buttom around modal     
     position: absolute;    // keeps App button in same location
     // position: relative;   // hides Hide button
+    // position: fixed;       // keeps App button in same location
     top: 150px;
     
-    left: 100px;
-    left: 25%;
-    // left: calc((50% - 400px)/2)
+
+    // CENTER the MODAL
+    left: calc((100% - 600px)/2);  // L-R center the modal
+    top: calc(50% - 100px);
     // // overflow: auto;
 
     // justifyContent: center;
@@ -50,7 +55,7 @@ const MainModalContainerDiv = styled.div`
 `
 
 const ModalContentContainer = styled.div`
-    border: 1px solid purple;
+    border: 2px solid purple;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -70,9 +75,11 @@ const ModalButton = styled.button`
     border: 1px solid green;
     background: lightgrey;
     color: seagreen;
-    width: 50px;
+    width: 80px;
     margin: 0 auto;
     outline-style: none;
+    margin: 1px auto;
+    border-radius: 10px;
 
 `
 
