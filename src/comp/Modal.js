@@ -9,15 +9,22 @@ import {
 
 } from '..//styled/modal_styles';
 
+
+// the useRef Hook is a function that returns a mutable ref object whose
+// .cuurent property is initiuailized to the passed argument 
+
+
 const CustomModal = (props) => {
     const [clickedOutside, setClickedOutside] = useState(false);
-    const clickRef = useRef();
+    const clickRefModal = useRef();
 
     const clickedOutside_handler = (e) => {
-        if (!clickRef.current.contains(e.target)) {
+        console.log('clicked  OUTSIDE')
+        
+        if (!clickRefModal.current.contains(e.target) && !props.showhideButtonClicked) {
             setClickedOutside(true)
-            props.toggleModal();
-
+            // props.toggleModal();
+            props.setModalOpen(false);
         }
     };
 
@@ -26,10 +33,10 @@ const CustomModal = (props) => {
     }
 
     useEffect(() => {
-            document.addEventListener('mousedown', clickedOutside_handler);
+            document.addEventListener('mouseup', clickedOutside_handler);
 
             // cleanup
-            return () => document.removeEventListener('mousedown', clickedOutside_handler);
+            return () => document.removeEventListener('mouseup', clickedOutside_handler);
     
     });
 
@@ -42,7 +49,7 @@ const CustomModal = (props) => {
 
                 {props.modalOpen && 
                     <MainModalContainerDiv
-                        ref = {clickRef} 
+                        ref = {clickRefModal} 
                         onClick = {clickedInside_handler}                    
                     >
                         <ModalContentContainer>
