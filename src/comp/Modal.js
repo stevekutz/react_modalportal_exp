@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {
     MainContainerDiv,
     ContainerDiv,
@@ -10,15 +10,28 @@ import {
 } from '..//styled/modal_styles';
 
 const CustomModal = (props) => {
-    // const [modalOpen, setModalOpen] = useState(false);
-    // const [modalButtonText, setModalButtonText] = useState('Show');
+    const [clickedOutside, setClickedOutside] = useState(false);
+    const clickRef = useRef();
 
+    const clickedOutside_handler = (e) => {
+        if (!clickRef.current.contains(e.target)) {
+            setClickedOutside(true)
+            props.toggleModal();
 
-    // const toggleModal = () => {
-    //     setModalOpen(!modalOpen)
+        }
+    };
+
+    const clickedInside_handler = () => {
+        setClickedOutside(false);
+    }
+
+    useEffect(() => {
+            document.addEventListener('mousedown', clickedOutside_handler);
+
+            // cleanup
+            return () => document.removeEventListener('mousedown', clickedOutside_handler);
     
-    //     {modalOpen ? setModalButtonText('Show') : setModalButtonText('Hide')}
-    // }
+    });
 
 
     return (
@@ -28,12 +41,16 @@ const CustomModal = (props) => {
         <MainContainerDiv>
 
                 {props.modalOpen && 
-                    <MainModalContainerDiv>
+                    <MainModalContainerDiv
+                        ref = {clickRef} 
+                        onClick = {clickedInside_handler}                    
+                    >
                         <ModalContentContainer>
                             <ModalTextContent> SOMETHING </ModalTextContent>
                             <ModalTextContent> SOMETHING </ModalTextContent>
                             <ModalTextContent> SOMETHING </ModalTextContent>
-                            <ModalButton onClick = {props.toggleModal}> CLOSE that modal</ModalButton>
+                            <ModalButton 
+                                onClick = {props.toggleModal}> CLOSE that modal</ModalButton>
                         </ModalContentContainer>
 
                     
