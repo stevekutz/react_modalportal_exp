@@ -20,9 +20,10 @@ const MainContainerDiv = styled.div`
     z-index: 0;
 `
 const ContainerDiv = styled.div`
-    border: 1px solid white;
+    border: 2px solid green;
+    // background: pink;
     margin: 5px auto;
-    padding: 10px;
+    // padding: 10px;
     // position: relative;
     // position: fixed;
     // position: absolute;
@@ -37,8 +38,38 @@ const TextP = styled.p`
     margin: 20px;
     padding: 30px;
     
+
     textAlign: center;
+    z-index: 3;
+`
+
+const ExpPositionP = styled.p`
+    background: yellow;
+    
+    // inherits from ContainerDiv
+    padding: 0;
+    margin: 0;
+    
+    color: rebeccapurple;
+    
+
+    // position: absolute;
+    // // moves Exp to upper right
+    // top: 15px;
+    // right: 10px;
+    
+    // position: relative;
+    // // moves Exp below & to left of parent thick green border
+    // top: 15px;
+    // right: 10px;
+    
+    position: fixed;
+    // set to initial containing block of orig viewport
+    // moves Exp below & to left of parent thick green border
+    top: 15px;
+    right: 10px;
     z-index: 2;
+
 `
 
 const CustomButton = styled.button`
@@ -59,6 +90,7 @@ export {
     MainContainerDiv,
     ContainerDiv,
     TextP,
+    ExpPositionP,
     CustomButton,
 
 }

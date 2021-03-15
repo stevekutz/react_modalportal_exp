@@ -17,10 +17,7 @@ const ContainerDiv = styled.div`
 
 
 `
-const TextP = styled.p`
-    textAlign: center;
 
-`
 
 const MainModalContainerDiv = styled.div`
     border: 5px solid deeppink;

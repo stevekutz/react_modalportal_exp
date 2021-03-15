@@ -4,6 +4,7 @@ import {
     MainContainerDiv,
     ContainerDiv,
     TextP,
+    ExpPositionP,
     CustomButton,
 
 } from './styled/app_styled';
@@ -47,20 +48,28 @@ function App() {
     }
 
 
+    modalOpen ? modalButtonText = 'Hide' : modalButtonText = 'Show';
 
-
-    if (modalOpen) {
-        // setModalButtonText('Hide');
-        modalButtonText = 'Hide'
-    } else {
-        // setModalButtonText('Show');
-        modalButtonText = 'Show'
-    }
+    // if (modalOpen) {
+    //     // setModalButtonText('Hide');
+    //     modalButtonText = 'Hide'
+    // } else {
+    //     // setModalButtonText('Show');
+    //     modalButtonText = 'Show'
+    // }
 
     return (
         <MainContainerDiv>
 
-        <div style = {{position: 'fixed', zIndex: 9, top: 208, left: 100, background: 'white', margin: '0px auto'}}> INSIDE  </div>
+        {/* 
+            static(default: top, left, etc. & z-index have no effect)
+
+        
+        
+        */}
+
+
+        <div style = {{position: 'relative', zIndex: 9, top: 208, left: 100, background: 'white', margin: '0px auto'}}> INSIDE  </div>
             {modalOpen ? <CustomModal 
                             modalOpen = {modalOpen} 
                             setModalOpen = {setModalOpen}
@@ -71,9 +80,13 @@ function App() {
             <ContainerDiv>
                 <CustomButton 
                     ref = {clickShowHideRef}
-                    onClick = {toggleModal}> {modalButtonText} </CustomButton>
+                    onClick = {toggleModal}> {modalButtonText} 
+                </CustomButton>
             </ContainerDiv>
             
+            <ContainerDiv>
+                <ExpPositionP> Exp </ExpPositionP>
+            </ContainerDiv>
             
             <TextP> {fillerText}</TextP>
         </MainContainerDiv>
