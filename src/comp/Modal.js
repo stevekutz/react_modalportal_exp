@@ -23,8 +23,8 @@ const CustomModal = (props) => {
         
         if (!clickRefModal.current.contains(e.target) && !props.showhideButtonClicked) {
             setClickedOutside(true)
-            // props.toggleModal();
-            props.setModalOpen(false);
+            props.toggleModal();
+            // props.setModalOpen(false);
         }
     };
 
